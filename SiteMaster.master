@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="SiteMaster.master.cs"
+    Inherits="HotelManagementProject.SiteMaster1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Hotel Management System</title>
+
+    <link href="style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server" autocomplete="off">
+
+        <!-- HEADER -->
+        <header>
+            HOTEL MANAGEMENT SYSTEM
+        </header>
+
+        <!-- SIDEBAR MENU -->
+        <nav>
+
+            <asp:HyperLink ID="hl1" runat="server" NavigateUrl="~/Registration.aspx">
+                User Registration
+            </asp:HyperLink>
+
+            <asp:HyperLink ID="hl2" runat="server" NavigateUrl="~/UserDetails.aspx">
+                User Details
+            </asp:HyperLink>
+
+            <asp:HyperLink ID="hl3" runat="server" NavigateUrl="~/HotelRegistration.aspx">
+                Hotel Registration
+            </asp:HyperLink>
+
+            <asp:HyperLink ID="hl4" runat="server" NavigateUrl="~/HotelDetails.aspx">
+                Hotel Details
+            </asp:HyperLink>
+
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="container">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2026 Hotel Management System | A Naresh IT Project
+        </footer>
+
+    </form>
+
+</body>
+</html>
