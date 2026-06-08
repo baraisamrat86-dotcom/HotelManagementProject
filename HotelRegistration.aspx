@@ -9,6 +9,59 @@ Inherits="HotelManagementProject.HotelRegistration" %>
         display: none !important;
     }
 </style>
+    <style>
+    header, nav, footer {
+        display: none !important;
+    }
+
+    .reg-bg {
+        background: url('Family-at-5-star-hotel.jpg') no-repeat center center;
+        background-size: cover;
+        min-height: 100vh;
+        padding-top: 50px;
+    }
+
+    .reg-box {
+        width: 450px;
+        margin: auto;
+        background: rgba(0,0,0,0.75);
+        padding: 30px;
+        border-radius: 15px;
+        color: white;
+        box-shadow: 0 0 20px gold;
+    }
+
+    .reg-box h2 {
+        text-align: center;
+        color: gold;
+    }
+
+    .reg-box label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .reg-box input[type=text],
+    .reg-box input[type=password] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    #btnRegister {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: gold;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
 
 <div class="reg-bg">
     <div class="reg-box">

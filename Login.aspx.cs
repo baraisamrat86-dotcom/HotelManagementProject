@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -13,7 +8,19 @@ namespace HotelManagementProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                txtUser.Text = "";
+                txtPass.Text = "";
 
+                txtUser.Attributes["autocomplete"] = "off";
+                txtPass.Attributes["autocomplete"] = "new-password";
+
+                if (this.Form != null)
+                {
+                    this.Form.Attributes["autocomplete"] = "off";
+                }
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -41,13 +48,11 @@ namespace HotelManagementProject
             if (dr.Read())
             {
                 Session["UserName"] = txtUser.Text;
-
                 Response.Redirect("UserDetails.aspx");
             }
             else
             {
-                lblMsg.Text =
-                "Invalid Username or Password";
+                lblMsg.Text = "Invalid Username or Password";
             }
 
             con.Close();

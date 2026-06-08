@@ -2,6 +2,89 @@
    GENERAL RESET
 ========================= */
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    background: url('Family-at-5-star-hotel.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.success-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-card {
+    width: 650px;
+    text-align: center;
+    color: white;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    animation: zoomIn 1s ease;
+}
+
+.success-icon {
+    font-size: 90px;
+    animation: bounce 2s infinite;
+}
+
+.success-card h1 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.success-card h2 {
+    color: #00ff88;
+}
+
+.redirect-msg {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.login-btn {
+    margin-top: 20px;
+    background: linear-gradient(45deg,#FFD700,#FF8C00);
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+    .login-btn:hover {
+        transform: scale(1.05);
+    }
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -72,9 +155,10 @@ nav {
     margin: 30px auto;
     background: rgba(0, 0, 0, 0.80);
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 20px;
     color: white !important;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    border: 1px solid gold;
+    box-shadow: 0 0 8px rgba(255,215,0,0.5);
     position: relative;
     z-index: 1;
 }
@@ -94,15 +178,17 @@ h2 {
    TEXT / LABEL FIX
 ========================= */
 
-#ContentPlaceHolder1 span,
-#ContentPlaceHolder1 label,
-#ContentPlaceHolder1 td,
-#ContentPlaceHolder1 p,
-#ContentPlaceHolder1 div,
-#ContentPlaceHolder1 li {
+#ContentPlaceHolder1 {
+    width: 80%;
+    margin: 30px auto;
+    background: rgba(0, 0, 0, 0.80);
+    padding: 25px;
+    border-radius: 20px;
     color: white !important;
-    font-size: 16px;
-    font-weight: bold;
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 8px rgba(212,175,55,0.5);
+    position: relative;
+    z-index: 1;
 }
 
 /* =========================
@@ -185,11 +271,22 @@ footer {
 
 .reg-box {
     width: 600px;
-    margin: auto;
-    padding: 20px;
-    background: rgba(0,0,0,0.7);
+    margin: 30px auto 0 auto; /* Registration box niche aayega */
+    padding: 25px;
+    background: rgba(0,0,0,0.75);
     color: white;
+    border: 1px solid #d4af37;
+    border-radius: 20px;
+    box-shadow: 0 0 8px rgba(212,175,55,0.5);
+    backdrop-filter: blur(5px);
 }
+
+    .reg-box h2 {
+        text-align: center;
+        color: gold;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
 
     .reg-box label {
         display: block;
@@ -205,13 +302,11 @@ footer {
         color: white !important;
     }
 
-    /* Welcome message black */
     .reg-box span#ContentPlaceHolder1_lblWelcome {
         color: black !important;
         font-size: 18px;
         font-weight: bold;
     }
-
 /* =========================
    SUCCESS PAGE
 ========================= */
@@ -252,4 +347,50 @@ footer {
 
     .success-btn:hover {
         background-color: #003366;
+    }
+/* =========================
+   LOGIN PAGE CENTER
+========================= */
+
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 450px;
+    padding: 30px;
+    background: rgba(0,0,0,0.80);
+    border: 1px solid #d4af37;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(212,175,55,0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+    .login-box h2 {
+        text-align: center;
+        color: gold;
+        margin-bottom: 20px;
+    }
+
+    .login-box label {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .login-box input[type=text],
+    .login-box input[type=password] {
+        width: 100%;
+    }
+
+    .login-box .msg {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
     }

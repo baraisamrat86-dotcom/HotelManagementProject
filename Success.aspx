@@ -12,22 +12,49 @@
 <body>
     <form id="form1" runat="server">
 
-        <div class="success-box">
+        <div class="success-container">
 
-            <h2>Registration Successful</h2>
+    <div class="success-card">
 
-            <p>Click on Login Button to Check Details</p>
 
-            <br />
+        <div class="success-icon">🏨</div>
 
-            <asp:Button
-                ID="Button1"
-                runat="server"
-                Text="Login"
-                CssClass="success-btn"
-                PostBackUrl="~/Login.aspx" />
+        <h1>Welcome to Luxury Hotel</h1>
 
-        </div>
+        <h2>Registration Completed Successfully</h2>
+
+        <p>
+            Your account has been created and is ready to use.
+        </p>
+
+        <p class="redirect-msg">
+           Redirecting to Login Page in <span id="countdown">30</span> seconds...
+        </p>
+
+        <asp:Button
+            ID="Button1"
+            runat="server"
+            Text="Login Now"
+            CssClass="login-btn"
+            PostBackUrl="~/Login.aspx" />
+
+    </div>
+
+</div>
+
+<script>
+    var timeLeft = 30;
+
+    var timer = setInterval(function () {
+        timeLeft--;
+        document.getElementById("countdown").innerHTML = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            window.location.href = "Login.aspx";
+        }
+    }, 1000);
+</script>
 
     </form>
 </body>

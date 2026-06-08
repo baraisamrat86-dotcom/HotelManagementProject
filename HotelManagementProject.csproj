@@ -124,6 +124,7 @@
     <Content Include="Home.aspx" />
     <Content Include="HotelDetails.aspx" />
     <Content Include="HotelRegistration.aspx" />
+    <Content Include="HotelSuccess.aspx" />
     <Content Include="images\Family-at-5-star-hotel.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Registration.aspx" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="HotelRegistration.aspx.designer.cs">
       <DependentUpon>HotelRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelSuccess.aspx.cs">
+      <DependentUpon>HotelSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelSuccess.aspx.designer.cs">
+      <DependentUpon>HotelSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
