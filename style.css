@@ -1,105 +1,23 @@
 ﻿/* =========================
    GENERAL RESET
 ========================= */
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI';
-    background: url('Family-at-5-star-hotel.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.success-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.success-card {
-    width: 650px;
-    text-align: center;
-    color: white;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 25px;
-    padding: 50px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.4);
-    animation: zoomIn 1s ease;
-}
-
-.success-icon {
-    font-size: 90px;
-    animation: bounce 2s infinite;
-}
-
-.success-card h1 {
-    color: gold;
-    margin-bottom: 10px;
-}
-
-.success-card h2 {
-    color: #00ff88;
-}
-
-.redirect-msg {
-    color: #ffd700;
-    font-weight: bold;
-}
-
-.login-btn {
-    margin-top: 20px;
-    background: linear-gradient(45deg,#FFD700,#FF8C00);
-    border: none;
-    color: white;
-    padding: 15px 35px;
-    font-size: 18px;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-    .login-btn:hover {
-        transform: scale(1.05);
-    }
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes bounce {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =========================
+   BODY BACKGROUND
+========================= */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('Images/family-at-5-star-hotel.jpg');
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../Family-at-5-star-hotel.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    color: white;
 }
 
+    /* DARK OVERLAY */
     body::before {
         content: "";
         position: fixed;
@@ -107,290 +25,151 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.55);
+        background: rgba(0,0,0,0.55);
         z-index: -1;
     }
 
 /* =========================
-   HEADER
+   MAIN CONTENT WRAPPER
 ========================= */
-
-h1 {
-    background-color: rgba(0, 51, 102, 0.9);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin: 0;
-    font-size: 36px;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    background-color: rgba(0, 80, 158, 0.9);
-    text-align: center;
-    padding: 15px;
-}
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 20px;
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-        nav a:hover {
-            color: yellow;
-        }
-
-/* =========================
-   CONTENT AREA
-========================= */
-
-#ContentPlaceHolder1 {
-    width: 80%;
+.body-content {
+    width: 85%;
     margin: 30px auto;
-    background: rgba(0, 0, 0, 0.80);
+    background: rgba(0,0,0,0.80);
     padding: 25px;
     border-radius: 20px;
-    color: white !important;
     border: 1px solid gold;
-    box-shadow: 0 0 8px rgba(255,215,0,0.5);
-    position: relative;
-    z-index: 1;
 }
 
 /* =========================
    HEADINGS
 ========================= */
-
-h2 {
+h1, h2 {
     text-align: center;
-    color: #00d4ff;
-    margin-bottom: 25px;
-    font-size: 32px;
+    color: gold;
+    margin-bottom: 20px;
 }
 
 /* =========================
-   TEXT / LABEL FIX
+   FORM BOX (REGISTRATION)
 ========================= */
-
-#ContentPlaceHolder1 {
-    width: 80%;
+.reg-box {
+    width: 500px;
     margin: 30px auto;
-    background: rgba(0, 0, 0, 0.80);
     padding: 25px;
-    border-radius: 20px;
-    color: white !important;
-    border: 1px solid #d4af37;
-    box-shadow: 0 0 8px rgba(212,175,55,0.5);
-    position: relative;
-    z-index: 1;
+    background: rgba(0,0,0,0.85);
+    border-radius: 15px;
+    border: 1px solid gold;
+}
+
+    .reg-box label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: white;
 }
 
 /* =========================
    INPUT FIELDS
 ========================= */
-
 input[type=text],
 input[type=password],
 textarea,
 select {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-top: 5px;
-    margin-bottom: 15px;
-    background-color: #f5efe6 !important;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #fff;
     color: #000;
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: all 0.3s ease;
 }
 
-    input[type=text]:focus,
-    input[type=password]:focus,
+    /* FOCUS EFFECT */
+    input:focus,
     textarea:focus,
     select:focus {
         outline: none;
-        border-color: #00d4ff;
-        box-shadow: 0 0 8px rgba(0,212,255,0.5);
+        border: 2px solid gold;
     }
 
 /* =========================
-   RADIO / CHECKBOX
+   RADIO + CHECKBOX
 ========================= */
-
 input[type=radio],
 input[type=checkbox] {
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 /* =========================
    BUTTONS
 ========================= */
-
 input[type=submit],
 input[type=button],
 button,
-input[type=reset],
-asp\:Button {
-    background-color: #00509e;
-    color: white;
+asp\\:Button {
+    background: gold;
+    color: #222;
+    padding: 10px 18px;
     border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 6px;
     font-weight: bold;
-    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
 }
 
     input[type=submit]:hover,
     input[type=button]:hover,
-    button:hover,
-    input[type=reset]:hover,
-    asp\:Button:hover {
-        background-color: #003366;
+    button:hover {
+        background: #e5c400;
     }
 
 /* =========================
-   FOOTER
+   TABLE (GRIDVIEW)
 ========================= */
-
-footer {
-    background-color: rgba(0, 51, 102, 0.9);
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 16px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.reg-box {
-    width: 600px;
-    margin: 30px auto 0 auto; /* Registration box niche aayega */
-    padding: 25px;
-    background: rgba(0,0,0,0.75);
-    color: white;
-    border: 1px solid #d4af37;
-    border-radius: 20px;
-    box-shadow: 0 0 8px rgba(212,175,55,0.5);
-    backdrop-filter: blur(5px);
-}
-
-    .reg-box h2 {
-        text-align: center;
-        color: gold;
-        font-size: 32px;
-        margin-bottom: 20px;
+    table th {
+        background: gold;
+        color: black;
+        padding: 10px;
     }
 
-    .reg-box label {
-        display: block;
-        color: white !important;
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 5px;
+    table td {
+        padding: 10px;
+        border-bottom: 1px solid #444;
     }
 
-    .reg-box table,
-    .reg-box td {
-        color: white !important;
+    table tr:hover {
+        background: rgba(255,255,255,0.05);
     }
 
-    .reg-box span#ContentPlaceHolder1_lblWelcome {
-        color: black !important;
-        font-size: 18px;
-        font-weight: bold;
-    }
 /* =========================
-   SUCCESS PAGE
+   LOGIN BOX
 ========================= */
-
-.success-box {
-    width: 500px;
+.login-box {
+    width: 420px;
     margin: 80px auto;
+    padding: 25px;
+    background: rgba(0,0,0,0.85);
+    border-radius: 15px;
+    border: 1px solid gold;
+}
+
+/* =========================
+   SUCCESS BOX
+========================= */
+.success-box {
+    width: 450px;
+    margin: 100px auto;
     text-align: center;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    color: white;
-}
-
-    .success-box h1 {
-        color: #00ff66;
-        margin-bottom: 20px;
-        font-size: 36px;
-    }
-
-    .success-box p {
-        color: white !important;
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-
-.success-btn {
-    background-color: #00509e;
-    color: white !important;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-    .success-btn:hover {
-        background-color: #003366;
-    }
-/* =========================
-   LOGIN PAGE CENTER
-========================= */
-
-.login-container {
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-box {
-    width: 450px;
-    padding: 30px;
-    background: rgba(0,0,0,0.80);
-    border: 1px solid #d4af37;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(212,175,55,0.5);
-    backdrop-filter: blur(5px);
-    color: white;
-}
-
-    .login-box h2 {
-        text-align: center;
-        color: gold;
-        margin-bottom: 20px;
-    }
-
-    .login-box label {
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 5px;
-        color: white;
-        font-weight: bold;
-    }
-
-    .login-box input[type=text],
-    .login-box input[type=password] {
-        width: 100%;
-    }
-
-    .login-box .msg {
-        color: red;
-        text-align: center;
-        margin-top: 10px;
+    border: 1px solid gold;
     }
