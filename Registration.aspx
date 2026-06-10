@@ -4,7 +4,6 @@
     Inherits="HotelManagementProject.Registration" %>
 
 
-
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
 

@@ -18,12 +18,12 @@
     }
 
     .login-box {
-        width: 500px;
+        width: 450px;
         padding: 30px;
         background: rgba(0,0,0,0.80);
         border: 1px solid #d4af37;
         border-radius: 20px;
-        box-shadow: 0 0 10px rgba(212,175,55,0.5);
+        box-shadow: 0 0 12px rgba(212,175,55,0.6);
         color: white;
     }
 
@@ -35,63 +35,59 @@
 
     .login-box label {
         display: block;
-        color: white;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
-        margin-bottom: 5px;
+        margin-top: 10px;
     }
 
     .login-box input[type=text],
     .login-box input[type=password] {
         width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .login-box button,
+    .login-box input[type=submit],
+    .login-box input[type=button] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background: gold;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
     }
 
     .msg {
         display: block;
         text-align: center;
-        font-weight: bold;
         margin-top: 10px;
+        font-weight: bold;
     }
 </style>
 
 <div class="login-container">
     <div class="login-box">
 
-        <!-- Fake fields -->
-        <input type="text" name="fakeusernameremembered" style="display:none;" />
-        <input type="password" name="fakepasswordremembered" style="display:none;" />
+        <!-- Anti autofill -->
+        <input type="text" style="display:none" autocomplete="username" />
+        <input type="password" style="display:none" autocomplete="new-password" />
 
         <h2>User Login</h2>
 
         <label>Username</label>
-        <asp:TextBox ID="txtUser"
-            runat="server"
-            AutoCompleteType="Disabled">
-        </asp:TextBox>
-
-        <br /><br />
+        <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
 
         <label>Password</label>
-        <asp:TextBox ID="txtPass"
-            runat="server"
-            TextMode="Password"
-            AutoCompleteType="Disabled">
-        </asp:TextBox>
+        <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
 
-        <br /><br />
+        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
 
-        <asp:Button ID="btnLogin"
-            runat="server"
-            Text="Login"
-            OnClick="btnLogin_Click" />
-
-        <br /><br />
-
-        <asp:Label ID="lblMsg"
-            runat="server"
-            CssClass="msg"
-            ForeColor="Red">
-        </asp:Label>
+        <asp:Label ID="lblMsg" runat="server" CssClass="msg" ForeColor="Red"></asp:Label>
 
     </div>
 </div>
